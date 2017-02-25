@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jQuery-Validation-Engine</artifactId>
-    <version>2.6.4-SNAPSHOT</version>
+    <version>2.6.4</version>
     <name>jQuery-Validation-Engine</name>
     <description>WebJar for jQuery-Validation-Engine</description>
     <url>http://webjars.org</url>
@@ -52,7 +52,7 @@
         <url>http://github.com/webjars/jQuery-Validation-Engine</url>
         <connection>scm:git:https://github.com/webjars/jQuery-Validation-Engine.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/jQuery-Validation-Engine.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>jQuery-Validation-Engine-2.6.4</tag>
     </scm>
     
     <dependencies>
@@ -89,13 +89,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="download archive" />
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${project.artifactId}-${version.unsnapshot}" includes="js/**, css/**" excludes="js/jquery*.min.js"/>
+                                    <fileset dir="${project.build.directory}/${project.artifactId}-${version.unsnapshot}" includes="js/**, css/**" excludes="js/jquery*.min.js" />
                                 </move>
                             </target>
                         </configuration>
